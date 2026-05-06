@@ -1,29 +1,18 @@
 import { useState } from "react";
+import "./App.css";
 
 function App() {
   const [liked, setLiked] = useState(false);
 
-  const toggleLike = () => {
+  const handleLike = () => {
     setLiked(!liked);
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-      }}
-    >
+    <div className="container">
       <button
-        onClick={toggleLike}
-        style={{
-          fontSize: "60px",
-          background: "none",
-          border: "none",
-          cursor: "pointer",
-        }}
+        className={liked ? "like-btn liked" : "like-btn"}
+        onClick={handleLike}
       >
         {liked ? "❤️" : "🤍"}
       </button>
