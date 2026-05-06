@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
-function App() {
+function Users() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -11,25 +11,19 @@ function App() {
   }, []);
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div>
       <h1>User Details</h1>
 
       {users.map((user) => (
-        <div
-          key={user.id}
-          style={{
-            border: "1px solid #ccc",
-            padding: "10px",
-            marginBottom: "10px",
-            borderRadius: "8px",
-          }}
-        >
-          <h3>Username: {user.username}</h3>
+        <div key={user.id}>
+          <p>Username: {user.username}</p>
           <p>Email: {user.email}</p>
+          <hr />
         </div>
       ))}
+
     </div>
   );
 }
 
-export default App;
+export default Users;
